@@ -69,7 +69,7 @@ WHERE departments_name = 'SQL Database'
 GROUP BY Employees.name
 
 
---მოიძიოს ყველა თანამშრომელი და მათი დეპარტამენტი, ხოლო თანამშრომლები დალაგდნენ ასაკის მიხედვით. გამოიყენეთ
+--მოიძიოს ყველა თანამშრომელი და მათი დეპარტამენტი, ხოლო თანამშრომლები დალაგდნენ ასაკის მიხედვით. 
 SELECT Employees.name, departments_name, Employees.age
 FROM Employees
 INNER JOIN Departments ON Departments.departments_id = Employees.id
