@@ -104,9 +104,3 @@ FROM Products p
 INNER JOIN Categorys c ON p.ProductID = c.CategoryID
 WHERE Price = (SELECT MAX(Price) FROM Products)
 GROUP BY c.Category 
-
-
-
-
-
-
