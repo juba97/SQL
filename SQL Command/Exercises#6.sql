@@ -1,12 +1,11 @@
 ﻿ALTER TABLE Users
 ADD last_login DATE
-
+     
 SELECT * FROM Users
 
 UPDATE Users
 SET last_login = '2018-08-17'
 WHERE id = 9
-
 
 SELECT id, name, last_login 
 FROM Users 
@@ -25,8 +24,6 @@ JOIN Orders o1 ON u1.id = o1.userID
 JOIN Orders o2 ON o2.amount = (SELECT MIN(amount) FROM Orders)
 JOIN Users u2 ON u2.id = o2.userID
 WHERE o1.amount = (SELECT MAX(amount) FROM Orders)
-
-
 
 --4 ყველაზე ახალი შეკვეთის ჩვენება
 SELECT TOP 4 u.name, o.order_date
@@ -72,7 +69,6 @@ SELECT
 FROM Users
 GROUP BY SUBSTRING(email, CHARINDEX('@', email) + 1, LEN(email))
 ORDER BY domain_count DESC
-
 
 ALTER TABLE Products
 ADD price INT
