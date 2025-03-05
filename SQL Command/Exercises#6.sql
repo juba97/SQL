@@ -56,11 +56,6 @@ GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY order_count DESC
 
 
-SELECT 
-FROM Orders
-
-SELECT * FROM Orders
-
 ALTER TABLE Products
 ADD price INT
 
