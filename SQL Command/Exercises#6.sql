@@ -55,6 +55,24 @@ FROM Orders
 GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY order_count DESC
 
+--მომხმარებლების პოვნა, რომლებიც არ აკეთებენ შეკვეთებს
+SELECT u.name, o.amount, o.order_id
+FROM Users u
+LEFT JOIN Orders o ON u.id = o.userID
+WHERE amount IS NULL
+
+SELECT email, name
+FROM Users
+WHERE email LIKE '%gmailcom'
+
+--მომხმარებლების ყველაზე ხშირად გამოყენებული დომენი
+SELECT 
+    SUBSTRING(email, CHARINDEX('@', email) + 1, LEN(email)) AS domain, 
+    COUNT(*) AS domain_count
+FROM Users
+GROUP BY SUBSTRING(email, CHARINDEX('@', email) + 1, LEN(email))
+ORDER BY domain_count DESC
+
 
 ALTER TABLE Products
 ADD price INT
