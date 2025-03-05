@@ -62,28 +62,3 @@ ADD price INT
 UPDATE Products
 SET price = 130
 WHERE product_id = 10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
