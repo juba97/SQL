@@ -13,10 +13,11 @@ name,
 age,
 status
 )
-VALUES  ('Maria Anders', 18, 'inactive'),
-		('Ana Trujillo', 32, 'active'),
-		('Antonio Moreno', 27, 'inactive'),
-		('Thomas Hardy', 46, 'active')
+VALUES
+('Maria Anders', 18, 'inactive'),
+('Ana Trujillo', 32, 'active'),
+('Antonio Moreno', 27, 'inactive'),
+('Thomas Hardy', 46, 'active')
 
 --მომხმარებელი, რომელიც 25 წელზე უფროსია და აქვს "active" სტატუსი.
 SELECT * FROM Users
