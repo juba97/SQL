@@ -108,11 +108,12 @@ CREATE TABLE employees(
 		position VARCHAR(20)
 )
 
-INSERT INTO employees(name, position)VALUES('Maria Anders', 'Developer'), 
-										   ('Ana Trujillo', 'HR'), 
-										   ('Antonio Moreno', 'Developer'),
-										   ('Thomas Hardy', 'Desogner'),
-										   ('Christina Berglund', 'HR')
+INSERT INTO employees(name, position)VALUES
+('Maria Anders', 'Developer'), 
+('Ana Trujillo', 'HR'), 
+('Antonio Moreno', 'Developer'),
+('Thomas Hardy', 'Desogner'),
+('Christina Berglund', 'HR')
 
 SELECT DISTINCT position FROM employees
 
