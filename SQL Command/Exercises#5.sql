@@ -162,13 +162,3 @@ WHERE order_id IN (14, 15, 16, 17)
 SELECT order_id, userID, amount, order_date
 FROM Orders
 WHERE order_date >= DATEADD(DAY, -30, GETDATE());
-
-
-
-
-
-
-
-
-
-
