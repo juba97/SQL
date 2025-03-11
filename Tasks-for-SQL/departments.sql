@@ -32,7 +32,7 @@ SELECT
 FROM employees
 LEFT JOIN departments ON employees.id = departments.id
 
---მოიძიეთ ყველა თანამშრომელი, რომლის სახელიც იწყება "A"-ით.
+--მოიძიეთ ყველა თანამშრომელი, რომლის სახელიც იწყება "A"-თი.
 SELECT * FROM employees
 WHERE name LIKE 'A%'
 
