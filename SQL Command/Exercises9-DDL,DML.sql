@@ -100,5 +100,11 @@ INNER JOIN Departments d ON d.departmen_id = e.id
 WHERE e.salary IN (SELECT salary FROM Employees 
 WHERE salary > 7000
 )
-
-
+   
+--გამოიტანს ორი ერთნაირი ხელფასის მქონდე ადამიანის საშუალო არითმეტიკულს
+SELECT 
+    SUM(salary) AS total_salary, 
+    AVG(salary) AS average_salary,
+    STRING_AGG(name, ',') AS Name
+FROM employees
+WHERE id IN (4, 7);
