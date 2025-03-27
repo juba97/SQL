@@ -110,3 +110,34 @@ SELECT custid,
 FROM Sales.Customers
 WHERE region IS DISTINCT
   FROM N'WA';
+
+SELECT orderid, requireddate, shippeddate, 
+GREATEST(requireddate, shippeddate) AS latestdate, 
+LEAST(requireddate, shippeddate) AS earliestdate
+FROM Sales.Orders
+WHERE custid = 8;
+
+SELECT orderid, requireddate, shippeddate, 
+CASE   
+WHEN requireddate > shippeddate OR shippeddate IS NULL
+THEN requireddate  ELSE shippeddate 
+END AS latestdate,  CASE    
+WHEN requireddate < shippeddate OR shippeddate IS NULL THEN requireddate   
+ELSE shippeddate  END AS earliestdate
+FROM Sales.Orders
+WHERE custid = 8;
+
+
+SELECT orderid,  YEAR(orderdate) AS orderyear,  YEAR(orderdate) + 1 AS nextyear
+FROM Sales.Orders;
+
+SELECT name, description
+FROM sys.fn_helpcollations();
+
+SELECT empid, firstname, lastname
+FROM HR.Employees
+WHERE lastname = N'davis';
+
+SELECT empid, firstname, lastname
+FROM HR.Employees
+WHERE lastname COLLATE Latin1_General_CS_AS = N'Davis';
