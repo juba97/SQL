@@ -141,3 +141,45 @@ WHERE lastname = N'davis';
 SELECT empid, firstname, lastname
 FROM HR.Employees
 WHERE lastname COLLATE Latin1_General_CS_AS = N'Davis';
+
+SELECT empid, firstname + N' ' + lastname AS fullname
+FROM HR.Employees;
+
+SELECT custid, country, region, city,country + N',' + region + N',' + city AS location
+FROM Sales.Customers;
+
+SELECT custid, country, region, city,  country + COALESCE(N',' + region, N'') + N',' + city AS location
+FROM Sales.Customers;
+
+SELECT custid, country, region, city,  CONCAT(country, N',' + region, N',' + city) AS location
+FROM Sales.Customers;
+
+SELECT custid, country, region, city,  CONCAT_WS(N',', country, region, city) AS location
+FROM Sales.Customers;
+
+SELECT DATALENGTH(N'abcde');
+
+SELECT PATINDEX('%[0-9]%', 'abcd123efgh');
+
+SELECT REPLACE('1-a 2-b', '-', ':');
+
+SELECT empid, lastname,  LEN(lastname) - LEN(REPLACE(lastname, 'e', '')) AS numoccur
+FROM HR.Employees;
+
+SELECT TRANSLATE('123.456.789,00', '.,', ',.');
+
+SELECT REPLICATE('abc', 2);
+
+SELECT supplierid,  RIGHT(REPLICATE('0', 9) + CAST(supplierid AS VARCHAR(10)), 10) AS strsupplierid3
+FROM Production.Suppliers;
+
+SELECT STUFF('xyz', 2, 1, 'abc');
+
+SELECT COMPRESS(N'This is my cv. Imagine it was much longer.');
+
+SELECT  CAST(DECOMPRESS(COMPRESS(N'This is my cv. Imagine it was much longer.')) AS NVARCHAR(MAX));
+
+SELECT custid, STRING_AGG(CAST(orderid AS VARCHAR(10)), ',')  WITHIN GROUP(ORDER BY orderdate DESC, orderid DESC) AS custorders
+FROM Sales.Orders
+GROUP BY custid;
+
