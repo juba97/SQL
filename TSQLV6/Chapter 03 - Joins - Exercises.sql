@@ -1,4 +1,4 @@
-﻿-- 1) Write a query that generates ve copies of each employee row
+﻿-- 1) Write a query that generates five copies of each employee row
 SELECT     e.empid,
 	   e.firstname, 
 	   e.lastname,
