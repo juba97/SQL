@@ -44,11 +44,11 @@ SELECT value
 FROM GENERATE_SERIES(1, 100, 5);
 
 SELECT 
-	e1.firstname AS OlderEmpFirstName,
+    e1.firstname AS OlderEmpFirstName,
     e1.lastname AS OlderEmpLastName,
     e1.hiredate AS OlderHireDate,
     e2.firstname AS YoungerEmpFirstName,
-	e2.lastname AS YoungerEmpLastName,
+    e2.lastname AS YoungerEmpLastName,
     e2.hiredate AS YoungerHireDate
 FROM HR.Employees e1
 INNER JOIN HR.Employees e2 ON e1.empid < e2.empid
