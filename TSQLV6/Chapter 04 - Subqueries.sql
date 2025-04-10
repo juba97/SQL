@@ -55,7 +55,3 @@ AND (SELECT MAX(O.orderid) FROM dbo.Orders AS O)
 AND n NOT IN (SELECT O.orderid FROM dbo.Orders AS O);
 
 DROP TABLE IF EXISTS dbo.Orders;
-
-
-
-
