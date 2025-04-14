@@ -116,3 +116,16 @@ ORDER BY custid, ordermonth;
 -- (IN) - Checks if a value is in a list (returned by a subquery or a static list)
 -- (EXISTS) - Checks whether the subquery returns any rows. It only cares about the existence of rows, not their values
 
+/*
+10) Write a query that returns for each order the number of days that passed since the same customer’s previous order. 
+To determine recency among orders, use orderdate as the primary sort element and orderid as the tiebreaker
+*/
+SELECT custid, 
+	   orderdate, 
+	   orderid,  (SELECT TOP (1) O2.orderdate   
+FROM Sales.Orders AS O2   
+WHERE O2.custid = O1.custid     
+AND ( O2.orderdate = O1.orderdate AND O2.orderid < O1.orderid OR O2.orderdate < O1.orderdate )   
+ORDER BY O2.orderdate DESC, O2.orderid DESC) AS diff
+FROM Sales.Orders AS O1
+ORDER BY custid, orderdate, orderid
