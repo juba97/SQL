@@ -33,7 +33,7 @@ SELECT DISTINCT country
 FROM Sales.Customers
 WHERE country NOT IN (SELECT country FROM HR.Employees);
 
--- 5) Write a query that returns for each customer all orders placed on the customer’s last day of activity
+-- 5) Write a query that returns for each customer all orders placed on the customerâ€™s last day of activity
 SELECT custid,
 	   orderid,
 	   orderdate,
@@ -46,7 +46,7 @@ ORDER BY custid;
 
 -- 6) Write a query that returns customers who placed orders in 2021 but not in 2022
 SELECT custid, 
-	   companyname
+       companyname
 FROM Sales.Customers c
 WHERE EXISTS (SELECT * FROM Sales.Orders o
 WHERE c.custid = o.custid
@@ -62,7 +62,8 @@ ORDER BY custid;
 
 -- Write a query that returns customers who placed orders in 2021 but not in 2022, 
 -- Same logic using the IN predicate
-SELECT custid, companyname
+SELECT custid, 
+       companyname
 FROM Sales.Customers
 WHERE custid IN (
     SELECT custid
@@ -80,7 +81,7 @@ ORDER BY custid;
 
 -- 7) Write a query that returns customers who ordered product 12
 SELECT custid,
-	   companyname
+       companyname
 FROM Sales.Customers c
 	WHERE EXISTS
 		(SELECT * FROM Sales.Orders o
@@ -94,8 +95,8 @@ AND od.productid = 12
 
 -- 8) Write a query that calculates a running-total quantity for each customer and month
 SELECT custid,
-	   ordermonth, 
-	   qty,
+       ordermonth, 
+       qty,
 (SELECT SUM(c2.qty) FROM Sales.CustOrders c2
 		WHERE c1.custid = c2.custid 
 		AND c2.ordermonth <= c1.ordermonth ) AS runqty
