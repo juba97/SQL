@@ -60,6 +60,18 @@ AND orderdate < '20230101'
 )
 ORDER BY custid;
 
+-- Same logic using the JOIN 
+SELECT DISTINCT c.custid, c.companyname
+FROM Sales.Customers c
+JOIN Sales.Orders o ON c.custid = o.custid
+WHERE YEAR(o.orderdate) = 2021
+  AND c.custid NOT IN (
+      SELECT custid 
+      FROM Sales.Orders 
+      WHERE YEAR(orderdate) = 2022
+  )
+ORDER BY custid
+
 -- Write a query that returns customers who placed orders in 2021 but not in 2022, 
 -- Same logic using the IN predicate
 SELECT custid, 
