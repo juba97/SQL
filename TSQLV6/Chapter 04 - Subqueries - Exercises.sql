@@ -1,8 +1,8 @@
 -- 1) Write a query that returns all orders placed on the last day of activity that can be found in the Orders table
 SELECT orderid,
-	   orderdate,
-	   custid,
-	   empid
+       orderdate,
+       custid,
+       empid
 FROM Sales.Orders
 WHERE orderdate = (SELECT MAX(orderdate) FROM Sales.Orders);
 
@@ -10,9 +10,9 @@ WHERE orderdate = (SELECT MAX(orderdate) FROM Sales.Orders);
    Note that more than one customer might have the same number of orders
 */
 SELECT custid, 
-	   orderid, 
-	   orderdate, 
-	   empid
+       orderid, 
+       orderdate, 
+       empid
 FROM Sales.Orders
 WHERE custid IN (SELECT TOP 1 WITH TIES custid FROM Sales.Orders 
 GROUP BY custid
@@ -21,8 +21,8 @@ ORDER BY COUNT(*) DESC
 
 -- 3) Write a query that returns employees who did not place orders on or after May 1, 2022
 SELECT e.empid,
-	   e.firstname,
-	   e.lastname
+       e.firstname,
+       e.lastname
 FROM HR.Employees e
 WHERE e.empid NOT IN (SELECT o.empid FROM Sales.Orders o 
 WHERE o.orderdate >= '20220501'
@@ -35,9 +35,9 @@ WHERE country NOT IN (SELECT country FROM HR.Employees);
 
 -- 5) Write a query that returns for each customer all orders placed on the customer’s last day of activity
 SELECT custid,
-	   orderid,
-	   orderdate,
-	   empid
+       orderid,
+       orderdate,
+       empid
 FROM Sales.Orders o1
 WHERE orderdate = (SELECT MAX(o2.orderdate) FROM Sales.Orders o2
 WHERE o1.custid = o2.custid
@@ -61,7 +61,8 @@ AND orderdate < '20230101'
 ORDER BY custid;
 
 -- Same logic using the JOIN 
-SELECT DISTINCT c.custid, c.companyname
+SELECT DISTINCT c.custid, 
+	        c.companyname
 FROM Sales.Customers c
 JOIN Sales.Orders o ON c.custid = o.custid
 WHERE YEAR(o.orderdate) = 2021
@@ -113,7 +114,8 @@ SELECT custid,
 		WHERE c1.custid = c2.custid 
 		AND c2.ordermonth <= c1.ordermonth ) AS runqty
 FROM Sales.CustOrders c1
-ORDER BY custid, ordermonth;
+ORDER BY custid, 
+	 ordermonth;
 
 --Same logic using the Windows Function
 SELECT 
@@ -122,7 +124,8 @@ SELECT
   qty,
   SUM(qty) OVER(PARTITION BY custid ORDER BY ordermonth) AS runqty
 FROM Sales.CustOrders
-ORDER BY custid, ordermonth;
+ORDER BY custid, 
+	 ordermonth;
 
 -- 9) Explain the difference between IN and EXISTS
 -- (IN) - Checks if a value is in a list (returned by a subquery or a static list)
@@ -133,11 +136,17 @@ ORDER BY custid, ordermonth;
 To determine recency among orders, use orderdate as the primary sort element and orderid as the tiebreaker
 */
 SELECT custid, 
-	   orderdate, 
-	   orderid,  (SELECT TOP (1) O2.orderdate   
+       orderdate, 
+       orderid, 
+       (SELECT TOP (1) O2.orderdate   
 FROM Sales.Orders AS O2   
 WHERE O2.custid = O1.custid     
-AND ( O2.orderdate = O1.orderdate AND O2.orderid < O1.orderid OR O2.orderdate < O1.orderdate )   
-ORDER BY O2.orderdate DESC, O2.orderid DESC) AS diff
+        AND ( O2.orderdate = O1.orderdate 
+	AND O2.orderid < O1.orderid 
+	OR O2.orderdate < O1.orderdate )   
+ORDER BY O2.orderdate DESC, 
+	 O2.orderid DESC) AS diff
 FROM Sales.Orders AS O1
-ORDER BY custid, orderdate, orderid
+ORDER BY custid, 
+	 orderdate,
+	 orderid
