@@ -1,33 +1,33 @@
 SELECT *
 FROM (SELECT custid, 
-			 companyname FROM Sales.Customers 
-			 WHERE country = 'USA') AS USACusts;
+      companyname FROM Sales.Customers 
+      WHERE country = 'USA') AS USACusts;
 
-SELECT YEAR(orderdate) AS orderyear,
-	   COUNT(DISTINCT custid) AS numcusts 
-	   FROM Sales.Orders
-	   GROUP BY YEAR(orderdate);
+SELECT  YEAR(orderdate) AS orderyear,
+        COUNT(DISTINCT custid) AS numcusts 
+        FROM Sales.Orders
+        GROUP BY YEAR(orderdate);
 
 SELECT orderyear, COUNT(DISTINCT custid) AS numcusts 
 FROM(SELECT YEAR(orderdate) AS orderyear, custid FROM Sales.Orders)AS D
 GROUP BY orderyear;
 
 SELECT orderyear, 
-	   COUNT(DISTINCT custid) AS numcusts 
-	   FROM (SELECT YEAR(orderdate), custid FROM Sales.Orders) AS D(orderyear, custid)
+       COUNT(DISTINCT custid) AS numcusts 
+       FROM (SELECT YEAR(orderdate), custid FROM Sales.Orders) AS D(orderyear, custid)
 GROUP BY orderyear;
 
 DECLARE @empid AS INT = 3;
 SELECT orderyear,
-	   COUNT(DISTINCT custid) AS numcusts 
+       COUNT(DISTINCT custid) AS numcusts 
 FROM (SELECT YEAR(orderdate) AS orderyear, 
-	  custid FROM Sales.Orders 
-	  WHERE empid = @empid) AS D 
-	  GROUP BY orderyear;
+      custid FROM Sales.Orders 
+      WHERE empid = @empid) AS D 
+      GROUP BY orderyear;
 
 SELECT orderyear , numcusts 
 FROM(SELECT orderyear, 
-COUNT(DISTINCT custid) AS numcusts 
+     COUNT(DISTINCT custid) AS numcusts 
 FROM(SELECT YEAR(orderdate) AS orderyear, custid
 FROM Sales.Orders) AS D1 
 GROUP BY orderyear) AS D2
@@ -57,6 +57,3 @@ LEFT OUTER JOIN (
     GROUP BY YEAR(orderdate)
 ) AS Prv 
 ON Cur.orderyear = Prv.orderyear + 1;
-
-
-
