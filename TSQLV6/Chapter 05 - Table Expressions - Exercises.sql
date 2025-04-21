@@ -18,29 +18,31 @@ WHERE orderdate != endofyear;
 
 -- 2-1) Write a query that returns the maximum value in the orderdate column for each employee
 
-SELECT empid, MAX(orderdate) AS maxorderdate
+SELECT empid, 
+       MAX(orderdate) AS maxorderdate
 FROM Sales.Orders 
 GROUP BY empid;
 
 /* 2-2) Encapsulate the query from Exercise 1 in a derived table. 
 Write a Join query between the derived table and the Orders table to return the orders with the maximum order date for each employee
 */
-SELECT o.empid,
-	   o.orderdate,
-	   o.orderid, 
-	   o.custid
+SELECT  o.empid,
+	o.orderdate,
+	o.orderid, 
+	o.custid
 FROM Sales.Orders o
 INNER JOIN (
-	SELECT empid, MAX(orderdate) AS maxorderdate 
+	SELECT empid, 
+	MAX(orderdate) AS maxorderdate 
 	FROM Sales.Orders 
 	GROUP BY empid)  AS d
 ON o.empid =  d.empid AND o.orderdate = d.maxorderdate
 
 -- 3-1)  Write a query that calculates a row number for each order based on orderdate, orderid ordering
-SELECT orderid,
-	   orderdate,
-	   custid, 
-	   empid,
+SELECT  orderid,
+	orderdate,
+	custid, 
+	empid,
 ROW_NUMBER() OVER(ORDER BY orderdate, orderid) AS rownum
 FROM Sales.Orders
 
@@ -59,45 +61,52 @@ WHERE rownum BETWEEN 11 AND 20
 -- 4) Write a solution using a recursive CTE that returns the management chain leading to Patricia Doyle (employee ID 9)
 WITH EmpsCTE AS
 (
-	SELECT empid, mgrid, firstname, lastname 
+	SELECT  empid, 
+		mgrid, 
+	 	firstname, 
+	 	lastname 
 	FROM HR.Employees  
 	WHERE empid = 9 
 
 UNION ALL  
 
-	SELECT P.empid, P.mgrid, P.firstname, P.lastname 
+	SELECT  P.empid,
+		P.mgrid, 
+		P.firstname, 
+		P.lastname 
 	FROM EmpsCTE AS C    
 	INNER JOIN HR.Employees AS P ON C.mgrid = P.empid
 )
-SELECT empid, mgrid, firstname, lastname
+SELECT  empid, 
+	mgrid, 
+	firstname, 
+	lastname
 FROM EmpsCTE
 
 -- 5-1) Create a view that returns the total quantity for each employee and year
 GO
 CREATE OR ALTER VIEW  Sales.VEmpOrders AS 
 SELECT  empid,  
-		YEAR(orderdate) AS orderyear,  
-		SUM(qty) AS qty
+	YEAR(orderdate) AS orderyear,  
+	SUM(qty) AS qty
 FROM Sales.Orders AS o  
 INNER JOIN Sales.OrderDetails AS od 
 	ON o.orderid = od.orderid
 GROUP BY  empid, 
-	      YEAR(orderdate);
+	  YEAR(orderdate);
 GO
 
 SELECT * FROM Sales.VEmpOrders 
 ORDER BY empid, 
-	     orderyear
+	 orderyear
 
 -- 5-2) Write a query against Sales.VEmpOrders that returns the running total quantity for each employee and year
-SELECT empid,
-	   orderyear, 
-	   qty,  
+SELECT  empid,
+	orderyear, 
+	qty,  
 	(SELECT SUM(v2.qty) FROM  Sales.VEmpOrders AS v2  
 WHERE v2.empid = v1.empid  
 	AND v2.orderyear <= v1.orderyear) AS runqty
 FROM  Sales.VEmpOrders AS v1
 ORDER BY empid, 
-	     orderyear;
-
-
+	 orderyear;
