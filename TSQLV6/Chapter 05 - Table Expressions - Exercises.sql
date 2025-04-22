@@ -17,7 +17,6 @@ FROM CTE
 WHERE orderdate != endofyear;
 
 -- 2-1) Write a query that returns the maximum value in the orderdate column for each employee
-
 SELECT empid, 
        MAX(orderdate) AS maxorderdate
 FROM Sales.Orders 
@@ -110,3 +109,33 @@ WHERE v2.empid = v1.empid
 FROM  Sales.VEmpOrders AS v1
 ORDER BY empid, 
 	 orderyear;
+
+/*
+   6-1)	Create an inline TVF that accepts as inputs a supplier ID (@supid AS INT) and a requested number of products (@n AS INT). 
+	The function should return @n products with the highest unit prices that are supplied by the specied supplier ID
+*/
+GO
+CREATE OR ALTER FUNCTION Production.TopProducts 
+	(@supid AS INT, @n AS INT) 
+	RETURNS TABLE
+AS
+RETURN
+	SELECT TOP (@n) productid, productname, unitprice
+FROM Production.Products
+WHERE supplierid = @supid  
+ORDER BY unitprice DESC;
+GO
+
+SELECT * FROM Production.TopProducts(5, 2);
+
+-- 6-2) Using the CROSS APPLY operator and the function you created in Exercise 6-1, return the two most expensive products for each supplier
+SELECT  S.supplierid, 
+        S.companyname, 
+	P.productid,
+	P.productname,
+	P.unitprice
+FROM Production.Suppliers AS S  
+CROSS APPLY Production.TopProducts(S.supplierid, 2) AS P
+
+DROP VIEW IF EXISTS Sales.VEmpOrders;
+DROP FUNCTION IF EXISTS Production.TopProducts;
