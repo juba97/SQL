@@ -128,6 +128,15 @@ GO
 
 SELECT * FROM Production.TopProducts(5, 2);
 
+-- 6-1) Same Logic
+SELECT  productid,
+	productname, 
+	unitprice 
+FROM Production.Products 
+WHERE supplierid = @supid 
+ORDER BY unitprice DESC 
+OFFSET 0 ROWS FETCH NEXT @n ROWS ONLY;
+
 -- 6-2) Using the CROSS APPLY operator and the function you created in Exercise 6-1, return the two most expensive products for each supplier
 SELECT  S.supplierid, 
         S.companyname, 
