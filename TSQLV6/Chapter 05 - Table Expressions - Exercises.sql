@@ -116,11 +116,12 @@ ORDER BY empid,
 */
 GO
 CREATE OR ALTER FUNCTION Production.TopProducts 
-	(@supid AS INT, @n AS INT) 
+	(@supid AS INT,
+	@n AS INT) 
 	RETURNS TABLE
 AS
 RETURN
-	SELECT TOP (@n) productid, productname, unitprice
+    SELECT TOP (@n) productid, productname, unitprice
 FROM Production.Products
 WHERE supplierid = @supid  
 ORDER BY unitprice DESC;
