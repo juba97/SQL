@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "e4ecfb4f-4350-4679-92c5-7c6bf92b159f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44473727",
+		"_collection_link": "https://juba-4080574.postman.co/workspace/Juba's-Workspace~ffada526-6aad-4d20-8873-b19ea055deaf/collection/44473727-e4ecfb4f-4350-4679-92c5-7c6bf92b159f?action=share&source=collection_link&creator=44473727"
+	},
+	"item": [
+		{
+			"name": "Cat Facts",
+			"item": [
+				{
+					"name": "Get Facts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();\r",
+									"\r",
+									"// TC1: Should return an array with 3 elements\r",
+									"pm.test(\"TC1: The length of the array is 3\", function () {\r",
+									"    pm.expect(json.data.length).to.eql(3);\r",
+									"});\r",
+									"\r",
+									"// TC2: Each fact must be more than 15 characters\r",
+									"pm.test(\"TC2: Every fact is long enough\", function () {\r",
+									"    json.data.forEach((item, index) => {\r",
+									"        pm.expect(item.fact.length).to.be.above(15, `Element #${index+1}`);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// TC3: The length field must be between 10-114\r",
+									"pm.test(\"TC3: Each length is between 10-114\", function () {\r",
+									"    json.data.forEach((item, index) => {\r",
+									"        pm.expect(item.length).to.be.within(10, 114, `Element #${index+1}`);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Data-driven testing in Postman\r",
+									"const testData = [\r",
+									"    { fact: \"Cats sleep between 12 and 16 hours a day.\", minLength: 10, maxLength: 50 },\r",
+									"    { fact: \"Cats have 32 muscles in each ear.\", minLength: 10, maxLength: 50 },\r",
+									"    { fact: \"Cats can run up to 30 miles per hour.\", minLength: 10, maxLength: 50 }\r",
+									"];\r",
+									"\r",
+									"// We conduct tests according to deadlines\r",
+									"testData.forEach((data, index) => {\r",
+									"    pm.test(`Fact #${index + 1} length is between ${data.minLength} and ${data.maxLength}`, function () {\r",
+									"        pm.expect(data.fact.length).to.be.within(data.minLength, data.maxLength);\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://catfact.ninja/facts?limit=3",
+							"protocol": "https",
+							"host": [
+								"catfact",
+								"ninja"
+							],
+							"path": [
+								"facts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

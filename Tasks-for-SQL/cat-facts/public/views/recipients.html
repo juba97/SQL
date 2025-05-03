@@ -1,0 +1,66 @@
+<div class="layout-center" ng-class="{'padding-0': $mdMedia('xs')}">
+	<div layout="column" layout-padding layout-align="start start">
+		<timer
+			class="md-headline bold center-text padding-0"
+			countdown="seconds"
+			finish-callback="countdownFinished()"
+			max-time-unit="'hour'"
+			interval="1000">
+			
+			<div layout='column' layout-gt-sm='row' layout-align='start start'>
+				<span class="title md-display-2">
+					{{hours}} hour{{hoursS}},&nbsp;
+				</span>
+
+				<span class="title md-display-2">
+					{{minutes}} minute{{minutesS}},&nbsp;
+				</span>
+
+				<span class="title md-display-2">
+					and {{seconds}} second{{secondsS}}
+				</span>
+			</div>
+		</timer>
+		
+		<span class="md-headline padding-0 grey">until the next fact is sent</span>
+		
+		<br/>
+	</div>
+	
+	<md-card ng-class="{'margin-sides-0': $mdMedia('xs')}">
+		<md-toolbar class="md-table-toolbar md-default">
+			<div class="md-toolbar-tools">
+				<span class="md-subhead bold title">
+					My Recipients
+					<span class="translucent" ng-show="recipients.length > 0">
+						({{recipients.length}})
+					</span>
+				</span>
+				
+				<span flex></span>
+			
+				<span class="margin-sides-10">
+					<md-checkbox
+						ng-model="orderBy"
+						aria-label="Sort table by last added"
+						ng-true-value="'-updatedAt'"
+						ng-false-value="'name'">
+					<span class="md-body-2 title">Sort by last added</span>
+				</span>
+
+				<md-button class="md-raised md-primary" ng-click="openAddRecipient($event)">
+					<md-icon class="material-icons">add</md-icon>
+					<span class="white">Add recipient</span>
+				</md-button>
+			</div>
+		</md-toolbar>
+		
+		<recipients
+			recipients="recipients"
+			promise="promise"
+			order-by="{{orderBy}}"
+			options="{dateAdded: true, editable: true}"
+			selected="[]">
+		</recipients>
+	</md-card>
+</div>

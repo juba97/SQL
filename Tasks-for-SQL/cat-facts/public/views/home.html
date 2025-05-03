@@ -1,0 +1,126 @@
+<div id="jumbo" layout="column" layout-align="start center">
+    <img id="app-logo" ng-src="img/logo/app-logo.png" alt="Logo"/>
+    <span id="app-slogan" class="md-headline">{{fact}}</span>
+    <div id="call-to-action" layout="row">
+        <md-button
+            ng-click="signIn()"
+            ng-if="!authenticatedUser"
+            class="md-button md-raised md-primary">
+            
+            Sign in
+        </md-button>
+        
+        <md-button
+            ng-click="openApp()"
+            ng-class="{'md-primary': authenticatedUser, 'md-accent': !authenticatedUser}"
+            class="md-button md-raised">
+            
+            Open App
+        </md-button>
+        
+        <md-button
+            ng-click="openUnsubscribe()"
+            class="md-button md-raised md-accent">
+            
+            Unsubscribe me
+        </md-button>
+    </div>
+</div>
+
+<ul class="carousel"
+    rn-carousel
+    rn-carousel-auto-slide="3"
+    rn-carousel-controls-allow-loop
+    rn-carousel-buffered
+    rn-carousel-transition="fadeAndSlide"
+    class="image">
+    
+    <li ng-repeat="image in carousel.catImages">
+        <div ng-style="{'background-image': 'url(' + image.link + ')'}" class="bgimage"></div>
+    </li>
+</ul>
+
+<div class="messages" layout="column" layout-align-sm="center center">
+    <img src="img/res/home/left.png" class="left" alt="Example conversation left"/>
+    <img src="img/res/home/right.png" class="right" alt="Example conversation right"/>
+</div>
+
+<style>
+    #main-content, ui-view {
+        overflow: hidden;
+        padding: 0 !important;
+    }
+    #main-content {
+        max-width: none !important;
+    }
+    
+    .carousel {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #E3F2FD;
+    }
+    .carousel .bgimage {
+        background-size: cover;
+        height: 100%;
+        background-position: center center;
+    }
+    
+    #jumbo {
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+    }
+    #jumbo {
+        margin-top: 15vh;
+    }
+    #app-logo {
+        height: 35vh;
+    }
+    #app-slogan {
+        color: #fff;
+        position: relative;
+        top: -5vh;
+    }
+    .messages {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+    .messages img {
+        position: absolute;
+        bottom: 60px;
+        width: 480px;
+        transition: ease-in-out all 300ms;
+    }
+    .messages img.left {
+        transform: translateY(-30%) rotate(3deg);
+    }
+    .messages img.right {
+        right: 0;
+        transform: translateY(-30%) rotate(-2deg);
+    }
+    @media (max-width: 960px) {
+        .messages {
+            padding-top: 150px;
+        }
+        .messages img {
+            transform: translateY(-55%) rotate(0deg) !important;
+            position: relative !important;
+        }
+    }
+    @media (max-width: 600px) {
+        .messages img {
+            max-width: 100%;
+        }
+    }
+    #call-to-action {
+        position: relative;
+        top: -3vh;
+    }
+    #call-to-action .md-button {
+        padding: 2px 14px;
+    }
+</style>
