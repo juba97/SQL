@@ -1,18 +1,16 @@
-# 📘 Advanced SQL Learning Repository  T-SQL Practice, Exercises & Real-World Scenarios
+# 📘 SQL Mastery – Structured Query Language Learning Repository
 
 This repository is dedicated to mastering SQL and Transact-SQL (T-SQL) for professional data querying, analysis, and manipulation. It includes structured study materials, practical challenges, and solved problems inspired by real-world scenarios and interview-style tasks.
 
 ---
 
-## 📂 Project Structure
+## 📁 Directory Structure
 
 ### `TSQLV6/`
-Hands-on chapter-based scripts based on the book **"T-SQL Fundamentals" (Fourth edition)**, designed to explore topics such as:
-- Query logic
-- Subqueries and CTEs
-- Joins and set operations
-- Window functions
-- Data transformations
+Chapter-based solutions from the **"T-SQL Fundamentals (Fourth Edition)"** book, with focus on:
+- Logical query processing
+- Subqueries, joins, window functions
+- Set-based thinking and performance
 
 Each file is organized per chapter and includes explanatory comments and examples.
 
@@ -37,14 +35,14 @@ SQL problem solutions based on [LeetCode](https://leetcode.com/problemset/databa
 
 ---
 
-## 🧪 Technologies & Tools
+## 🔍 Topics Covered
 
-- **SQL Server Management Studio (SSMS)**
-- **T-SQL (Transact-SQL)**
-- **LeetCode SQL Challenges**
-- Markdown for documentation
-
----
+- SQL query logic and order of execution  
+- Data filtering, aggregation, and transformation  
+- Relational joins and subqueries  
+- Set operators and derived tables  
+- Index usage and performance-oriented patterns  
+- Declarative vs procedural thinking in SQL 
 
 ## 🚀 How to Use This Repository
 
