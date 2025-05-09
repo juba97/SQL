@@ -1,4 +1,4 @@
-# 📘 Advanced SQL Learning Repository – T-SQL Practice, Exercises & Real-World Scenarios
+# 📘 Advanced SQL Learning Repository  T-SQL Practice, Exercises & Real-World Scenarios
 
 This repository is dedicated to mastering SQL and Transact-SQL (T-SQL) for professional data querying, analysis, and manipulation. It includes structured study materials, practical challenges, and solved problems inspired by real-world scenarios and interview-style tasks.
 
