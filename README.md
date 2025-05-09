@@ -7,7 +7,7 @@ This repository is dedicated to mastering SQL and Transact-SQL (T-SQL) for profe
 ## 📂 Project Structure
 
 ### `TSQLV6/`
-Hands-on chapter-based scripts based on the book **"T-SQL Querying" (Fourth edition)**, designed to explore topics such as:
+Hands-on chapter-based scripts based on the book **"T-SQL Fundamentals" (Fourth edition)**, designed to explore topics such as:
 - Query logic
 - Subqueries and CTEs
 - Joins and set operations
