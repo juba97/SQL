@@ -115,8 +115,8 @@ INSERT INTO Employees2(Employename, ManagerID, Managername)
 VALUES
 ('Maria Anders', 1, 'helados'),
 ('Ana Trujillo', 1, 'helados'),
-('Antonio Moreno', 4, 'Berglunds snabbköp'),
-('Thomas Hardy', 4, 'Berglunds snabbköp'),
+('Antonio Moreno', 4, 'Berglunds snabbkÃ¶p'),
+('Thomas Hardy', 4, 'Berglunds snabbkÃ¶p'),
 ('Christina Berglund', 5, 'Alfreds Futterkiste')
 
 SELECT 
@@ -125,9 +125,3 @@ SELECT
 FROM Employees2 e1
 JOIN Employees2 e2 ON e1.ManagerID = e2.Employee2ID
 GROUP BY e2.Managername;
-
-
-
-
-
-
