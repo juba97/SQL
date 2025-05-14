@@ -56,5 +56,3 @@ FROM customers
 INNER JOIN credits ON customers.id = credits.customer_id
 LEFT JOIN payments ON credits.id = payments.credit_id
 GROUP BY customers.name;
-
-
