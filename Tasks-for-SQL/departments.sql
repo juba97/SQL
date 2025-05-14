@@ -41,4 +41,3 @@ SELECT COUNT(id) AS CustomerID, name AS Departments
 FROM departments
 GROUP BY name
 HAVING COUNT(id) > 1
-
