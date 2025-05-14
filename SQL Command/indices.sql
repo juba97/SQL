@@ -63,5 +63,3 @@ SELECT * FROM Test2
 EXEC sp_helpindex 'Test2';
 
 DROP INDEX [IX_Test2_Email] ON [Test2];
-
-
