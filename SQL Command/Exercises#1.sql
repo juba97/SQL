@@ -99,5 +99,3 @@ SELECT Employees.name, Departments.department_name
 FROM Employees
 JOIN Departments ON Departments.id = Employees.id
 WHERE department_name = 'IT'
-
-
