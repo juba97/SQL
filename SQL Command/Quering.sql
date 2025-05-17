@@ -117,6 +117,3 @@ WHERE Age IN (40)
 -- ცხრილში დააჯამებს მინ, ასაკებს რომელიც >=18 და <=40
 SELECT SUM(Age) FROM Persons
 WHERE Age >= 18 AND Age <= 40;
-
-
-
