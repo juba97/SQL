@@ -82,4 +82,3 @@ SELECT
 FROM DSA_DB.dbo.SalesTransactions_Staging;
 
 SELECT * FROM FactSales;
-
