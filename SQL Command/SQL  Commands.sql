@@ -94,5 +94,3 @@ HAVING AVG(Salary) > 2200
 
 SELECT Department, FirstName FROM Employees
 WHERE Department = 'HR'
-
-
