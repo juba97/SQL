@@ -25,8 +25,6 @@ ADD City VARCHAR(50);
 ALTER TABLE Persons  
 ALTER COLUMN PersonsID BIGINT;
 
-
-
 --თეიბლში მონაცემის გაზრდა
 ALTER TABLE Persons
 ALTER COLUMN PersonsID varchar(50);
@@ -39,18 +37,18 @@ LastName,
 City,
 Addres) VALUES(
 1,
-'Juba',
-'Koguashvili',
-'Kutaisi',
-'Buxaidze'
+'Maria',
+'Anders',
+'Berlin',
+'Obere Str. 57'
 );
 
 INSERT INTO Persons1 VALUES(
 2,
-'Juba!',
-'Koguashvili!',
-'Kutaisi!',
-'Buxaidze!'
+'Antonio',
+'Moreno',
+'México D.F.',
+'Mataderos 2312'
 );
 
 -- უნიკალური მნიშვნელობები
@@ -58,20 +56,12 @@ ALTER TABLE Persons1
 ADD PersonsID INT IDENTITY (100,2) PRIMARY KEY
 
 INSERT INTO Persons1 VALUES(
-'JUBA',
-'KOGUASHVILI',
-'KUTAISI',
-'BUXAIDZE'),
+'Alfreds',
+'Futterkiste',
+'Luleå',
+'Berguvsvägen 8'),
 
-('SEBASTIAN',
-'BAXI',
-'VAKE',
+('Christina',
+'Berglund',
+'Avda. de la Constitución 2222',
 'CHAVCHAVADZE');
-
-
-
-
-
-
-
-
