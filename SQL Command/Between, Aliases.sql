@@ -117,7 +117,3 @@ SELECT Fname AS Firstname FROM Persons
 SELECT P.PersonID AS pID, P.Lname AS Lastname, O.OrderID AS oID, O.Ordernumber AS oNUMBER
 FROM Persons AS P, Orders AS O
 WHERE P.PersonID = O.PersonID
-
-
-
-
