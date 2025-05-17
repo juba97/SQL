@@ -106,7 +106,3 @@ WHERE ID >= 100;
 --იპოვის ასაკს რომელიც მეტია ან ტოლია 18-ზე და სახელი შეესაბამება 'ლანა'-ს
 SELECT * FROM KOGUASHVILI
 WHERE AGE >= 18 AND SAXELI = 'LANA';
-
-
-
-
