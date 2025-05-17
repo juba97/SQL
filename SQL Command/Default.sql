@@ -74,6 +74,3 @@ ADD CONSTRAINT DF_Addres DEFAULT 'Tbilisi' FOR Addres
 --კონკრეტული ქოლუმნის ამოშლა
 DELETE FROM Persons
 WHERE PersonalID = 5;
-
-
-
