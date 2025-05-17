@@ -146,7 +146,3 @@ INNER JOIN Orders ON Persons.PersonsID = Orders.OrdersID
 
 --CROSS JOIN ქმნის მთლიან კომბინაციას ორივე ცხრილის ჩანაწერებიდან. არ არის ON პირობა.
 --CROSS JOIN Orders
-
-
-
-
