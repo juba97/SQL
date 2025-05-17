@@ -74,5 +74,3 @@ SELECT Employees.name, departments_name, Employees.age
 FROM Employees
 INNER JOIN Departments ON Departments.departments_id = Employees.id
 ORDER BY age DESC
-
-
