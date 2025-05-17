@@ -21,4 +21,3 @@ SELECT * FROM Meals, Drinks
 
 SELECT CONCAT_WS('-', MealName, DrinkName) AS MenuList
 FROM Meals CROSS JOIN Drinks
-
