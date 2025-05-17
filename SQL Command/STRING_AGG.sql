@@ -36,7 +36,7 @@ age
 )VALUES(
 'Ana',
 'Trujillo',
-'MÈxico D.F.',
+'M√©xico D.F.',
 33
 );
 INSERT INTO Persons(
@@ -48,7 +48,7 @@ age
 )VALUES(
 'Thomas',
 'Hardy',
-'Berguvsv‰gen 8.',
+'Berguvsv√§gen 8.',
 'London',
 43
 );
@@ -96,4 +96,3 @@ WHERE age = (SELECT MIN(age) FROM Persons)
 SELECT COUNT(PersonsID), age FROM Persons
 GROUP BY age
 HAVING COUNT(PersonsID) = 2
-
