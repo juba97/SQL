@@ -9,19 +9,16 @@ CREATE TABLE Employees (
     salary DECIMAL(10,2)
 );
 
-
 CREATE TABLE Departments (
     id INT PRIMARY KEY,
     department_name VARCHAR(50)
 );
-
 
 INSERT INTO Departments (id, department_name) VALUES
 (1, 'IT'),
 (2, 'HR'),
 (3, 'Marketing'),
 (4, 'Finance');
-
 
 INSERT INTO Employees (name, age, department, salary) VALUES
 ('Nika', 30, 'IT', 5000),
