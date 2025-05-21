@@ -42,7 +42,6 @@ City,
 Age
 )VALUES('Galaktion', 'Tabidze', 'Tbilisi', '21')
 
-
 --თეიბლიდან ამოშლა
 ALTER TABLE Persons
 DROP COLUMN PersonalID
