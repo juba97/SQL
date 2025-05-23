@@ -110,7 +110,6 @@ ManagerID INT CONSTRAINT FK_Empl2 FOREIGN KEY (ManagerID) REFERENCES Employees2(
 Managername VARCHAR(20)
 )
 
-
 INSERT INTO Employees2(Employename, ManagerID, Managername)
 VALUES
 ('Maria Anders', 1, 'helados'),
