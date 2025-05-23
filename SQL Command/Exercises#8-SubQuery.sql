@@ -151,7 +151,6 @@ SELECT name, sallary
 FROM Users
 WHERE sallary > (SELECT AVG(sallary) FROM Users);
 
-
 --(correlated subquery) პროდუქტები, რომლებიც აღემატება თავიანთი კატეგორიის საშუალო ფასს
 SELECT p1.product_name, p1.categories, p1.price
 FROM Products_info p1
