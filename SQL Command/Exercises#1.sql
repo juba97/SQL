@@ -82,7 +82,6 @@ WHERE salary > ANY (SELECT salary FROM Employees WHERE department = 'HR');
 SELECT * FROM Employees
 WHERE salary > ALL (SELECT salary FROM Employees WHERE department = 'HR')
 
-
 SELECT e.name, d.department_name
 FROM Employees AS e
 INNER JOIN Departments d ON e.department = d.department_name
@@ -90,7 +89,6 @@ INNER JOIN Departments d ON e.department = d.department_name
 SELECT Departments.department_name, Employees.name
 FROM Departments
 LEFT JOIN Employees ON Employees.id = Departments.id;
-
 
 SELECT Employees.name, Departments.department_name
 FROM Employees
