@@ -65,8 +65,6 @@ SELECT MIN(Age) FROM Persons
 SELECT * FROM Persons
 WHERE Age = (SELECT MIN(Age) FROM Persons)
 
-
-
 SELECT * FROM Persons
 
 CREATE TABLE Orders(
