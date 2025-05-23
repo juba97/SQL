@@ -93,8 +93,6 @@ VALUES
 ('Laptops2'),
 ('Perifer Device2')
 
-
-
 SELECT * FROM Products
 SELECT * FROM Categorys
 
