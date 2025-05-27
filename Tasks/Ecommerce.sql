@@ -15,6 +15,7 @@ VALUES
 ('Alice Brown', 'UK'), 
 ('David Kim', 'South Korea'), 
 ('Maria Lopez', 'Spain');
+
 -- Orders Table
 CREATE TABLE Orders(
     OrderID INT IDENTITY(101,1) PRIMARY KEY,
