@@ -13,6 +13,7 @@ name VARCHAR(20)
 )
 ALTER TABLE departments
 ADD CONSTRAINT FK_departments FOREIGN KEY (id) REFERENCES employees(id)
+	 
 --შეიტანეთ რამდენიმე მონაცემი ორივე მაგიდაში.
 INSERT INTO employees(name, department_id) VALUES('Antonio Moreno', 1)
 INSERT INTO employees(name, department_id) VALUES('Ana Trujillo', 2)
