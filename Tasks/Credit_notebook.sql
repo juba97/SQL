@@ -6,6 +6,7 @@ CREATE TABLE customers (
     id INT IDENTITY(1,1) PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
+
 --შეიქმნა ცხრილი სადაც შეტანილია ID, AMOUNT AND CREDIT_DATE და REFERENCE -ით უკავშირდება CUSTOMERS ID -ს
 CREATE TABLE credits (
     id INT IDENTITY(1,1) PRIMARY KEY,
