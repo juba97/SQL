@@ -66,7 +66,6 @@ namespace MyWebAPI.Controllers
             existingProduct.Price = product.Price;
 
             _context.SaveChanges();
-
             return NoContent();
         }
     }
