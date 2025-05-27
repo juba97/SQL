@@ -9,7 +9,6 @@ suite('Unit Tests', function () {
        assert.isNotNull(1, '1 is not null');
     });
     // #2
-    
     test('#isDefined, #isUndefined', function () {
       assert.fail(null, 'null is not undefined');
       assert.fail(undefined, 'undefined IS undefined');
