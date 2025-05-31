@@ -26,10 +26,10 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .keepOpen()
-        .get('/hello?name=Colombo')
+        .get('/hello?name=Juba')
         .end(function (err, res) {
-          assert.fail(res.status, 200);
-          assert.fail(res.text, 'hello Colombo');
+          assert.equal(res.status, 200);
+          assert.equal(res.text, 'hello Juba');
           done();
         });
     });
@@ -75,6 +75,8 @@ suite('Functional Tests', function () {
       done();
     });
   });
+ });
+});
 
 const Browser = require('zombie');
 Browser.site = '{{localhost}}';
