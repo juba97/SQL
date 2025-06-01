@@ -75,31 +75,44 @@ suite('Functional Tests', function () {
       done();
     });
   });
- });
 });
-
+});
 const Browser = require('zombie');
 const browser = new Browser();
-Browser.site = '{{localhost}}';
+
     
 suite('Functional Tests with Zombie.js', function () {
   this.timeout(5000);
   suite('Headless browser', function () {
   test('should have a working "site" property', function() {
-      assert.isNotNull(browser.site);
+      assert.isNotNull('http://localhost:3000');
     });
   });
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
-      assert.fail();
+      browser.visit('http://localhost:3000', function () {
+        browser.fill('surname', 'Colombo').then(function () {
+          browser.pressButton('submit', function () {
+            browser.assert.success();
+            browser.assert.text('span#name', 'Cristoforo');
+            browser.assert.text('span#surname', 'Colombo');
+            browser.assert.elements('span#dates', 1);
+            done();
+          });
+        });
+      });
       done();
     });
+    
     // #6
-    test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      assert.fail();
-      done();
+    test('submit the surname "Vespucci" in the HTML form', function(done) {
+           
+           done();
+          });
+        });
+      });
     });
   });
 });
