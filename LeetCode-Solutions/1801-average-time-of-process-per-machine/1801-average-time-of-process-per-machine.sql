@@ -11,4 +11,3 @@ FROM (
     GROUP BY machine_id, process_id
 ) AS process_times
 GROUP BY machine_id;
-
