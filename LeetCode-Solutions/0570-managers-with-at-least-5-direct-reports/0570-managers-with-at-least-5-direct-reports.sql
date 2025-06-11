@@ -6,5 +6,3 @@ WHERE id IN (
     GROUP BY managerId
     HAVING COUNT(*) >= 5
 );
-
-
