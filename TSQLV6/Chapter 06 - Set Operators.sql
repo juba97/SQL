@@ -3,7 +3,6 @@
 -- Chapter 06 - Set Operators
 -- © Itzik Ben-Gan 
 ---------------------------------------------------------------------
-
 SET NOCOUNT ON
 USE TSQLV6;
 
