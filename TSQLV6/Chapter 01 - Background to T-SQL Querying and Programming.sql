@@ -2,7 +2,6 @@
 -- T-SQL Fundamentals Fourth Edition
 -- Chapter 01 - Background to T-SQL Querying and Programming
 -- © Itzik Ben-Gan 
-
 --------------------------------------------------------------------- 
 
 ---------------------------------------------------------------------
