@@ -1,13 +1,14 @@
 /*
+
 	1) Explain the difference between the UNION ALL and UNION operators. 
 	In what cases are the two equivalent? When they are equivalent, which one should you use?
 */
 
 /*
-	• UNION removes duplicates, which incurs additional processing.
-	• UNION ALL includes all rows, including duplicates, and is faster.
-	• Use UNION ALL when you know or don’t care about duplicates and want better performance.
-	• Use UNION only when you need to remove duplicates.
+	â€¢ UNION removes duplicates, which incurs additional processing.
+	â€¢ UNION ALL includes all rows, including duplicates, and is faster.
+	â€¢ Use UNION ALL when you know or donâ€™t care about duplicates and want better performance.
+	â€¢ Use UNION only when you need to remove duplicates.
 */
 
 /*
