@@ -1,6 +1,4 @@
 -- 1) Write a query against the Sales.Orders table that returns orders placed in June 2021
-
-
 SELECT orderid, orderdate, custid, empid
 FROM Sales.Orders
 WHERE YEAR(orderdate) = 2021 AND MONTH(orderdate) = 6
