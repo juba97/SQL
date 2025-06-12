@@ -1,5 +1,4 @@
 ﻿---------------------------------------------------------------------
-
 -- Script that creates the sample database TSQLV6
 --
 -- Supported versions of SQL Server: 2008+, Azure SQL Database
