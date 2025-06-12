@@ -1,5 +1,4 @@
 /*
-
 	1) Explain the difference between the UNION ALL and UNION operators. 
 	In what cases are the two equivalent? When they are equivalent, which one should you use?
 */
