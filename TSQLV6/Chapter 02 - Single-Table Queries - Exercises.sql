@@ -1,5 +1,6 @@
 -- 1) Write a query against the Sales.Orders table that returns orders placed in June 2021
 
+
 SELECT orderid, orderdate, custid, empid
 FROM Sales.Orders
 WHERE YEAR(orderdate) = 2021 AND MONTH(orderdate) = 6
@@ -25,7 +26,7 @@ ORDER BY Totalvalue DESC
 table that returns employees with a last name that starts
 with a lowercase English letter in the range a through
 z. Remember that the collation of the sample database is case
-insensitive (Latin1_General_CI_CP1_AS if you didn’t 
+insensitive (Latin1_General_CI_CP1_AS if you didnâ€™t 
 choose an explicit collation during the SQL Server installation,
 or Latin1_General_CI_AS if you chose Windows collation, Case Insensitive, Accent Sensitive) */
 
