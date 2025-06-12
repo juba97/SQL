@@ -1,4 +1,5 @@
 -- 1) Write a query that returns all orders placed on the last day of activity that can be found in the Orders table
+
 SELECT orderid,
        orderdate,
        custid,
