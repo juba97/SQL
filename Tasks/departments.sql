@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE LessonsDB
 USE LessonsDB
 
+	 
 --შექმენით ბაზა, რომელიც შედგება ორი მაგიდისგან: employees და departments
 CREATE TABLE employees (
 id INT IDENTITY(1,1) PRIMARY KEY,
