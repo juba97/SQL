@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE LessonsDB
 USE LessonsDB
 
+   
 CREATE TABLE Persons(
 PersonID INT IDENTITY(1,1) PRIMARY KEY,
 Fname VARCHAR(20),
