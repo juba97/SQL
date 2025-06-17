@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE Lessons
 USE Lessons
 
+   
 --თეიბლის შექმნა
 CREATE TABLE Persons(
 Firstname VARCHAR(20),
