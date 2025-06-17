@@ -1,7 +1,6 @@
 CREATE DATABASE LessonsDB
 USE LessonsDB
 
-  
 CREATE TABLE Meals(MealName VARCHAR(100))
 CREATE TABLE Drinks(DrinkName VARCHAR(100))
 INSERT INTO Drinks
