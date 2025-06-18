@@ -1,7 +1,6 @@
 ﻿CREATE DATABASE Exercises
 USE Exercises
 
-     
 CREATE TABLE Employees (
     id INT IDENTITY(1,1) PRIMARY KEY,
     name VARCHAR(50),
