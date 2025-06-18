@@ -7,6 +7,7 @@ Product_name VARCHAR(20),
 Firstname VARCHAR(20)
 )
 
+   
 SELECT * FROM Sales
 
 INSERT INTO Sales(Product_name, Firstname)
