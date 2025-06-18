@@ -5,7 +5,6 @@ GO
 -- DSA ბაზა
 CREATE DATABASE DSA_DB;
 GO
-
     
 -- DW ბაზა
 CREATE DATABASE DW_DB;
