@@ -6,6 +6,7 @@ id INT IDENTITY(1,1) PRIMARY KEY,
 name VARCHAR(20),
 age INT,
 )
+   
 
 INSERT INTO Employees(name, age)
 VALUES
