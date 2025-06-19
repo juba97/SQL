@@ -8,6 +8,7 @@ age INT CONSTRAINT DF_age CHECK (age >= 18),
 email VARCHAR(255)
 )
 
+   
 INSERT INTO Users(
 name,
 age,
