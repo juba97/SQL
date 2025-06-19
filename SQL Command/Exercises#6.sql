@@ -3,6 +3,7 @@ ADD last_login DATE
      
 SELECT * FROM Users
 
+      
 UPDATE Users
 SET last_login = '2018-08-17'
 WHERE id = 9
