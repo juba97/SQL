@@ -6,7 +6,6 @@ CustomerID INT IDENTITY(1,1) PRIMARY KEY,
 Customername VARCHAR(20)
 )
 	
-
 CREATE TABLE Orders(
 OrderID INT,
 CustomerID INT CONSTRAINT FK_Cust FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
