@@ -7,7 +7,6 @@ CREATE TABLE Users(
 	age INT CONSTRAINT DF_age CHECK (age >= 18),
 	status CHAR(20)
 )
-
 	 
 INSERT INTO Users(
 name,
