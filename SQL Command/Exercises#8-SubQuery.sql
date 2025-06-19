@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE Exercises3
 USE Exercises3
 
+     
 CREATE TABLE Users(
 id INT IDENTITY(1,1) PRIMARY KEY,
 name VARCHAR(20),
