@@ -5,6 +5,7 @@ CREATE TABLE Customers(
 CustomerID INT IDENTITY(1,1) PRIMARY KEY,
 Customername VARCHAR(20)
 )
+	
 
 CREATE TABLE Orders(
 OrderID INT,
