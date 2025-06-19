@@ -8,6 +8,7 @@ CREATE TABLE Users(
 	status CHAR(20)
 )
 
+	 
 INSERT INTO Users(
 name,
 age,
