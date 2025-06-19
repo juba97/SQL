@@ -1,7 +1,6 @@
 CREATE DATABASE Lessons
 USE Lessons
 
-
 CREATE TABLE Customers(
 CustomerID INT IDENTITY(1,1) PRIMARY KEY,
 Customername VARCHAR(20)
