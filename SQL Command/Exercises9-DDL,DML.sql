@@ -1,5 +1,6 @@
 ﻿CREATE DATABASE Exercises6
 USE Exercises6
+    
 
 CREATE TABLE Employees(
 id INT IDENTITY(1,1) PRIMARY KEY,
