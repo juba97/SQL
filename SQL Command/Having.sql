@@ -1,6 +1,5 @@
 ﻿USE LessonsDB
 
-   
 --თითოეული ასაკისთვის რაოდენობის დათვლა და სახელების გაერთიანება
 SELECT COUNT(PersonsID) AS PersonsCount, Age, STRING_AGG(Firstname, ', ') AS Firstnames
 FROM Persons
