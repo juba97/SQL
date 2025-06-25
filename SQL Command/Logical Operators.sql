@@ -9,7 +9,7 @@ Addres VARCHAR (20),
 City VARCHAR (20),
 )
 
-INSERT INTO KOGUASHVILI(
+INSERT INTO Persons(
 ID,
 Name,
 LastName,
@@ -23,7 +23,7 @@ City
 'Berlin'
 )
 
-INSERT INTO Persons VALUES(2,'MATE', 'AMIREJIBI', 'BATUMI', 'AGMASHENEBELI')
+INSERT INTO Persons VALUES(2,'Ana', 'Trujillo', 'de la Constitución 2222', 'México D.F.')
 
 INSERT INTO Persons (
 Name,
