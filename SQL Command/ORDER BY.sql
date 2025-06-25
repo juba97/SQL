@@ -2,6 +2,7 @@ CREATE DATABASE LessonsDB
 USE LessonsDB
 SELECT * FROM Persons
 
+  
 CREATE TABLE Persons(
 PersonsID INT IDENTITY(1,1) PRIMARY KEY,
 Firstname VARCHAR(20),
@@ -32,7 +33,7 @@ Age
 ) VALUES (
 'Antonio',
 'Moreno',
-'México D.F.',
+'MÃ©xico D.F.',
 '46'
 );
 
