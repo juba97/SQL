@@ -1,5 +1,6 @@
 ﻿CREATE DATABASE LessonsDB
 
+   
 USE LessonsDB
 
 --თეიბლის შექმნა
