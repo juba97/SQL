@@ -1,6 +1,7 @@
 CREATE DATABASE LessonsDB
 USE LessonsDB
 
+  
 CREATE TABLE Persons(
 PersonsID INT IDENTITY(1,1) PRIMARY KEY,
 Firstname VARCHAR(20) NOT NULL,
@@ -16,8 +17,8 @@ City,
 Age
 ) VALUES(
 'Berglunds',
-'snabbköp',
-'Luleå',
+'snabbkÃ¶p',
+'LuleÃ¥',
 '33'
 );
 
