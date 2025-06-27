@@ -2,7 +2,6 @@
 CREATE DATABASE Lessons
 USE Lessons
 
-  
 --შევქმნათ ცხრილი სადაც შევიტანთ ინფორმაციას პიროვნებაზა
 CREATE TABLE Persons(
 PersonID INT IDENTITY(1,1) PRIMARY KEY,
