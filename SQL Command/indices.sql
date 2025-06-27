@@ -1,5 +1,6 @@
 USE Exercises5
 
+    
 EXEC sp_rename  'Customers.CustomerId', 'CustomerID', 'COLUMN'
 
 CREATE INDEX sample_index on Customers(name);
