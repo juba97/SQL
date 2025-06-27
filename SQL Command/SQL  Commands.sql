@@ -1,6 +1,7 @@
 CREATE DATABASE Exercises4
 USE Exercises4
 
+    
 CREATE TABLE Employees(
 EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
 FirstName VARCHAR(50),
