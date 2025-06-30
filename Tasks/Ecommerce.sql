@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE OnlineStore;
 USE OnlineStore;
 
+
 -- Customers Table
 CREATE TABLE Customers (
     CustomerID INT IDENTITY(1,1) PRIMARY KEY,
