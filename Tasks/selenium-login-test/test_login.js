@@ -2,6 +2,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const { expect } = require('chai');
 const fs = require('fs');
 
+
 describe('Saucedemo Login Tests', function () {
   this.timeout(30000);
   let driver;
