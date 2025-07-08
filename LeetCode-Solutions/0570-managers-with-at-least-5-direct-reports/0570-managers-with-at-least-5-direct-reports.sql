@@ -5,5 +5,4 @@ WHERE id IN (
     FROM Employee
     GROUP BY managerId
     HAVING COUNT(*) >= 5
-    
 );
