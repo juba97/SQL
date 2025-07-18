@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE Exercises5
 USE Exercises5
 
+     
 CREATE TABLE Customer(
 CusID INT IDENTITY(1,1) PRIMARY KEY,
 name VARCHAR(20)
