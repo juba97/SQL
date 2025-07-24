@@ -1,7 +1,6 @@
 ﻿CREATE DATABASE NOTEBOOK
 USE NOTEBOOK
 
-     
 --შეიქმნა ცხრილი რომელშიც შეტანილია მომხმარებლის Name და ID
 CREATE TABLE customers (
     id INT IDENTITY(1,1) PRIMARY KEY,
